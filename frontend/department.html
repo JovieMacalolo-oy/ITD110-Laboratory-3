@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Management System</h2>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span class="icon">&#128218;</span> Students</a></li>
+            <li><a href="faculty.html"><span class="icon">&#128100;</span> Faculty</a></li>
+            <li><a href="course.html"><span class="icon">&#128214;</span> Courses</a></li>
+            <li><a href="department.html" class="active"><span class="icon">&#127984;</span> Departments</a></li>
+            <li><a href="schedule.html"><span class="icon">&#128197;</span> Schedules</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Department Management</h1>
+
+            <div class="form-container">
+                <h2 id="form-title">Add New Department</h2>
+                <form id="dept-form">
+                    <input type="hidden" id="dept-db-id">
+                    <div class="form-group">
+                        <label for="dept-code">Department Code</label>
+                        <input type="text" id="dept-code" placeholder="e.g. CCS" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dept-name">Department Name</label>
+                        <input type="text" id="dept-name" placeholder="e.g. College of Computer Studies" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dept-location">Office Location</label>
+                        <input type="text" id="dept-location" placeholder="e.g. 2nd Floor, Admin Bldg" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn">Add Department</button>
+                        <button type="button" id="cancel-btn" class="hidden">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h2>Department List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dept-tbody"></tbody>
+                </table>
+                <p id="no-dept" class="hidden">No departments found.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="department.js"></script>
+</body>
+</html>
